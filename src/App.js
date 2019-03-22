@@ -1,24 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { store } from './stores';
+import biteApple from './actions';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleBtnClick = this.handleBtnClick.bind(this);
+  }
+
+  handleBtnClick(e) {
+    store.dispatch(biteApple());
+  }
+
+  isAppleEaten() {
+    return store.getState().nBite === 6;
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          {!this.isAppleEaten() &&
+            <img className={`App-logo apple-bite-${ store.getState().nBite }`} alt="Apple"/>
+          }
+          {this.isAppleEaten() &&
+            <a href="https://www.linkedin.com/in/laodiego/">
+              <img className="link-linkedin" alt="LinkedIn logo"/>
+            </a>
+          }
+          <button className="btn-bite"><img className="btn-bite" alt="Button" onClick={ this.handleBtnClick }/></button>
         </header>
       </div>
     );

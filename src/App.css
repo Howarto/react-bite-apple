@@ -3,9 +3,10 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 15s linear;
   height: 40vmin;
   pointer-events: none;
+  margin: 60px;
 }
 
 .App-header {
@@ -30,4 +31,54 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.link-linkedin {
+  content: url('/assets/PNGs/square-linkedin-512.png');
+}
+
+.apple-bite-0 {
+  content: url('/assets/PNGs/apple.png');
+}
+
+.apple-bite-1 {
+  content: url('/assets/PNGs/apple2.png');
+}
+
+.apple-bite-2 {
+  content: url('/assets/PNGs/apple3.png');
+}
+
+.apple-bite-3 {
+  content: url('/assets/PNGs/apple4.png');
+}
+
+.apple-bite-4 {
+  content: url('/assets/PNGs/apple5.png');
+}
+
+.apple-bite-5 {
+  content: url('/assets/PNGs/apple6.png');
+}
+
+.apple-bite-6 {
+  content: url('/assets/PNGs/apple7.png');
+}
+
+.btn-bite img {
+  content: url('/assets/PNGs/btn_bite.png');
+}
+
+.btn-bite:active img {
+  content: url('/assets/PNGs/btn_bite_pressed.png');
+}
+
+button.btn-bite {
+  transform: scale(0.6, 0.6);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
 }
